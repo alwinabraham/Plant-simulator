@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Variable" ADD COLUMN     "weight" DOUBLE PRECISION NOT NULL DEFAULT 0.1;

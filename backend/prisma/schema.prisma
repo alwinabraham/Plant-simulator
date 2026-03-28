@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../prisma-client"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+/// Simulation condition axis (e.g. water, sunlight). Values at runtime use low/medium/high.
+model Variable {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  name        String
+  description String?
+  weight      Float    @default(0.1)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
